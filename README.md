@@ -1,6 +1,6 @@
 # ❤️ Brisa & Vini - Nossa História
 
-Este é um projeto pessoal e romântico desenvolvido como uma **Landing Page** especial para celebrar o meu relacionamento com a Brisa. O site funciona como um memorial interativo, repleto de momentos, música e tecnologia.
+Este é um projeto pessoal e romântico desenvolvido como uma **Landing Page** especial para celebrar o meu relacionamento com a minha namorada. O site funciona como um memorial interativo, repleto de momentos, música e tecnologia.
 
 ## 🚀 Funcionalidades
 
