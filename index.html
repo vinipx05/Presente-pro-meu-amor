@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brisa e Vini</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="hero">
+        <div class="container">
+            <div class="heart">❤</div>
+            <h1>Para a Brisa mais linda e refrescante do mundo!</h1>
+            <p class="since">Juntos desde 30 de janeiro de 2026</p>
+
+            <div class="cards">
+                <div class="card">
+                    <h2 id="months">0</h2>
+                    <span>MESES</span>
+                </div>
+                <div class="card">
+                    <h2 id="days">0</h2>
+                    <span>DIAS</span>
+                </div>
+            </div>
+
+            <div class="timer">
+                <span id="hours">00</span> :
+                <span id="minutes">00</span> :
+                <span id="seconds">00</span>
+            </div>
+
+            <p class="total">São <span id="totalDays"></span> dias de amor ❤</p>
+        </div>
+    </section>
+
+    <section class="music-section">
+        <div class="music-card">
+            <div class="music-icon">🎵</div>
+            <h2>A Música Que Me Lembra Você</h2>
+            <p>A trilha sonora que me faz lembrar de você</p>
+            <button class="music-btn" onclick="playMusic()">▶ Clique para ouvir</button>
+            <audio id="music">
+                <source src="musica.mp3" type="audio/mpeg">
+            </audio>
+            <div class="music-notes">♪ ♫ ♪</div>
+        </div>
+    </section>
+
+    <section class="message-section">
+        <div class="quote-container">
+            <span class="quote-icon top">"</span>
+            <p class="message-text">
+                Brisa, cada dia ao seu lado é um presente que eu agradeço. Você é a luz que ilumina meus dias e a brisa suave que acalma meu coração. Te amo mais do que palavras podem expressar, e estou ansioso para criar mais memórias incríveis juntos com você. ❤
+            <span class="quote-icon bottom">"</span>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="gallery-title">Nossos Momentos</h2>
+            <p class="gallery-subtitle">Memórias que guardamos no coração</p>
+
+            <div class="carousel-container">
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+                
+                <div class="carousel-main">
+                    <div class="slides">
+                        <img src="foto1.jpg" class="slide active">
+                        <img src="foto2.jpg" class="slide">
+                        <img src="foto3.jpg" class="slide">
+                        <video class="slide video-slide" loop muted playsinline>
+                            <source src="seu-video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="counter">1 / 4</div>
+                </div>
+
+                <div class="thumbnails">
+                    <img src="foto1.jpg" class="thumb active" onclick="currentSlide(0)">
+                    <img src="foto2.jpg" class="thumb" onclick="currentSlide(1)">
+                    <img src="foto3.jpg" class="thumb" onclick="currentSlide(2)">
+                    <div class="thumb video-thumb" onclick="currentSlide(3)">
+                        <img src="capa-do-video.jpg" class="thumb">
+                        <span class="play-icon">▶</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="map-section">
+    <div class="container">
+        <h2 class="gallery-title">Onde Tudo Começou</h2>
+        <p class="gallery-subtitle">O lugar que guardamos com carinho no mapa da nossa história.</p>
+        
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.3848613670457!2d-34.88124252407213!3d-8.062168180559853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18bbfdc892f3%3A0x99ec9a32f660a051!2sPagode%20do%20Didi!5e0!3m2!1spt-BR!2sbr!4v1773271954917!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="300" 
+                style="border:0; border-radius: 20px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-overlay">
+                <span class="map-heart">📍❤️</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="final-love-section">
+        <div class="divider-container">
+            <span class="heart-icon">❤</span>
+        </div>
+        <h2 class="love-title">Eu Te Amo</h2>
+        <p class="love-subtitle">Até o fim de todos os tempos, e além. ❤</p>
+    </section>
+
+    <div id="hearts-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
