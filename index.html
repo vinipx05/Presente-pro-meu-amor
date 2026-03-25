@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brisa e Vini</title>
-    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/fotos/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -44,7 +44,7 @@
             <p>A trilha sonora que me faz lembrar de você</p>
             <button class="music-btn" onclick="playMusic()">▶ Clique para ouvir</button>
             <audio id="music">
-                <source src="musica.mp3" type="audio/mpeg">
+                <source src="assets/musicas/musica.mp3" type="audio/mpeg">
             </audio>
             <div class="music-notes">♪ ♫ ♪</div>
         </div>
@@ -70,22 +70,22 @@
                 
                 <div class="carousel-main">
                     <div class="slides">
-                        <img src="foto1.jpg" class="slide active">
-                        <img src="foto2.jpg" class="slide">
-                        <img src="foto3.jpg" class="slide">
+                        <img src="assets/fotos/foto1.jpg" class="slide active">
+                        <img src="assets/fotos/foto2.jpg" class="slide">
+                        <img src="assets/fotos/foto3.jpg" class="slide">
                         <video class="slide video-slide" loop muted playsinline>
-                            <source src="seu-video.mp4" type="video/mp4">
+                            <source src="assets/videos/seu-video.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="counter">1 / 4</div>
                 </div>
 
                 <div class="thumbnails">
-                    <img src="foto1.jpg" class="thumb active" onclick="currentSlide(0)">
-                    <img src="foto2.jpg" class="thumb" onclick="currentSlide(1)">
-                    <img src="foto3.jpg" class="thumb" onclick="currentSlide(2)">
+                    <img src="assets/fotos/foto1.jpg" class="thumb active" onclick="currentSlide(0)">
+                    <img src="assets/fotos/foto2.jpg" class="thumb" onclick="currentSlide(1)">
+                    <img src="assets/fotos/foto3.jpg" class="thumb" onclick="currentSlide(2)">
                     <div class="thumb video-thumb" onclick="currentSlide(3)">
-                        <img src="capa-do-video.jpg" class="thumb">
+                        <img src="assets/fotos/capa-do-video.jpg" class="thumb">
                         <span class="play-icon">▶</span>
                     </div>
                 </div>
@@ -125,6 +125,6 @@
 
     <div id="hearts-container"></div>
 
-    <script src="script.js"></script>
+    <script src="assets/javascript/script.js"></script>
 </body>
 </html>
