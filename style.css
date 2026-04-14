@@ -13,25 +13,24 @@ body {
     overflow-x: hidden;
 }
 
-/* Landing Page: Objetos Maiores e Mais Próximos */
 section {
-    min-height: auto; /* Permite que fiquem colados */
+    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px 20px; /* Redução de espaço entre seções */
+    padding: 30px 20px;
 }
 
 .container {
-    max-width: 800px; /* Aumentado para dar mais presença */
+    max-width: 800px;
     width: 100%;
     text-align: center;
 }
 
-/* Hero Section Aumentada */
+/* Hero */
 .heart {
     color: #8708d1;
-    font-size: 80px; /* Maior */
+    font-size: 80px;
     margin-bottom: 10px;
     display: inline-block;
     animation: pulse 1.5s infinite;
@@ -44,7 +43,7 @@ section {
 
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 10vw, 4rem); /* Título maior */
+    font-size: clamp(2.2rem, 10vw, 4rem);
     margin-bottom: 15px;
 }
 
@@ -58,7 +57,7 @@ h1 {
 .card {
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(12px);
-    padding: 30px; /* Cartões maiores */
+    padding: 30px;
     border-radius: 25px;
     min-width: 140px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -72,14 +71,14 @@ h1 {
     margin-bottom: 10px;
 }
 
-/* Music Section Compacta */
+/* Music */
 .music-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(15px);
     border-radius: 35px;
     padding: 50px 40px;
     width: 100%;
-    max-width: 500px; /* Maior presença */
+    max-width: 500px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -96,7 +95,7 @@ h1 {
     transition: 0.3s;
 }
 
-/* Message Section Mais Larga */
+/* Message */
 .quote-container {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
@@ -108,7 +107,7 @@ h1 {
 }
 
 .message-text {
-    font-size: 1.4rem; /* Texto maior */
+    font-size: 1.4rem;
     line-height: 1.6;
 }
 
@@ -121,9 +120,20 @@ h1 {
 .quote-icon.top { top: 0; left: 30px; }
 .quote-icon.bottom { bottom: -20px; right: 30px; }
 
-/* Galeria Mais Robusta */
+/* Gallery */
+.gallery-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    margin-bottom: 10px;
+}
+
+.gallery-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 30px;
+}
+
 .carousel-container {
-    max-width: 450px; /* Galeria aumentada */
+    max-width: 450px;
     margin: 0 auto;
     position: relative;
 }
@@ -134,19 +144,36 @@ h1 {
     overflow: hidden;
     aspect-ratio: 3/3.5;
     background: #000;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
+/* Container interno das slides */
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Todas as slides ficam sobrepostas e ocultas por padrão */
 .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: none;
-    object-fit: cover;
-
 }
 
-.slide.active { display: block; }
+/* Apenas a ativa aparece */
+.slide.active {
+    display: block;
+}
+
+/* Vídeo ativo também precisa de display: block */
+video.slide.active {
+    display: block;
+}
 
 .prev, .next {
     position: absolute;
@@ -164,7 +191,7 @@ h1 {
     font-size: 1.5rem;
 }
 
-.prev { left: -70px; } /* Setas para fora em telas grandes */
+.prev { left: -70px; }
 .next { right: -70px; }
 
 .thumbnails {
@@ -172,6 +199,7 @@ h1 {
     justify-content: center;
     gap: 12px;
     margin-top: 25px;
+    flex-wrap: wrap;
 }
 
 .thumb {
@@ -184,29 +212,45 @@ h1 {
     object-fit: cover;
 }
 
-/* CORREÇÃO: Remove a borda preta fazendo a imagem preencher tudo */
-.slide {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* ESSENCIAL para remover bordas pretas */
-    display: none;
-    animation: fadeIn 0.5s;
-}
-
 .thumb.active { opacity: 1; border: 3px solid #ff6fa5; transform: scale(1.1); }
 
-@media (max-width: 650px) {
-    .prev { left: 10px; }
-    .next { right: 10px; }
-    .quote-container { padding: 40px 20px; }
-    .carousel-container { max-width: 320px; }
+/* Thumbnail do vídeo */
+.video-thumb {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* SEÇÃO FINAL ROMÂNTICA */
+.video-thumb .thumb {
+    width: 70px;
+    height: 70px;
+}
+
+.play-icon {
+    position: absolute;
+    font-size: 1.2rem;
+    color: white;
+    pointer-events: none;
+    text-shadow: 0 0 6px rgba(0,0,0,0.8);
+}
+
+.counter {
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* Seção Final */
 .final-love-section {
-    padding: 60px 20px 80px; /* Mais espaço no final para dar um respiro */
+    padding: 60px 20px 80px;
     text-align: center;
-    background-color: transparent; /* Usa o fundo gradiente do body */
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -216,7 +260,7 @@ h1 {
 .divider-container {
     width: 100%;
     max-width: 600px;
-    margin: 0 auto 30px; /* Espaço para o título */
+    margin: 0 auto 30px;
     position: relative;
     display: flex;
     align-items: center;
@@ -228,60 +272,48 @@ h1 {
     content: "";
     flex: 1;
     height: 1px;
-    background-color: rgba(255, 111, 165, 0.4); /* Linha rosa sutil */
+    background-color: rgba(255, 111, 165, 0.4);
 }
 
-.divider-container::before {
-    margin-right: 20px;
-}
-
-.divider-container::after {
-    margin-left: 20px;
-}
+.divider-container::before { margin-right: 20px; }
+.divider-container::after  { margin-left: 20px; }
 
 .heart-icon {
-    color: #ff6fa5; /* Rosa mais vibrante */
+    color: #ff6fa5;
     font-size: 24px;
     animation: heartPulse 1.8s infinite;
 }
 
 .love-title {
-    font-family: 'Playfair Display', serif; /* Use a fonte elegante que já definimos */
-    font-size: 3rem; /* Título maior */
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
     color: white;
     margin-bottom: 10px;
-    text-shadow: 0 0 15px rgba(255, 111, 165, 0.6); /* Brilho rosa */
+    text-shadow: 0 0 15px rgba(255, 111, 165, 0.6);
 }
 
 .love-subtitle {
     font-family: 'Poppins', sans-serif;
-    color: rgba(255, 255, 255, 0.7); /* Texto sutil */
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1.1rem;
     font-style: italic;
     max-width: 500px;
 }
 
-/* Animação de Pulsar para o coração */
 @keyframes heartPulse {
     0%, 100% { transform: scale(1); opacity: 0.8; }
     50% { transform: scale(1.3); opacity: 1; }
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
-    .love-title { font-size: 2.2rem; }
-    .divider-container { max-width: 300px; }
-}
-
-/* Configuração da chuva de corações */
+/* Chuva de corações */
 #hearts-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Garante que os corações não atrapalham os cliques nos botões */
-    z-index: 9999; /* Fica por cima de tudo */
+    pointer-events: none;
+    z-index: 9999;
     overflow: hidden;
 }
 
@@ -294,31 +326,25 @@ h1 {
 }
 
 @keyframes fall {
-    0% {
-        transform: translateY(-10vh) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-    }
+    0%   { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
 }
 
-/* SEÇÃO DO MAPA CENTRALIZADA */
+/* Mapa */
 .map-section {
     padding: 60px 20px;
     display: flex;
-    flex-direction: column; /* Garante que o título e o mapa fiquem em coluna */
-    align-items: center;    /* Centraliza horizontalmente os itens do flex */
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 100%;
 }
 
 .map-container {
     position: relative;
-    max-width: 500px;       /* Ajustei para 500px para combinar com a galeria */
-    width: 100%;            /* Ocupa a largura total até o max-width */
-    margin: 0 auto;         /* Reforça a centralização manual */
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
     border-radius: 30px;
     padding: 10px;
     background: rgba(255, 255, 255, 0.05);
@@ -327,14 +353,27 @@ h1 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Garante que o iframe preencha o container centralizado */
 .map-container iframe {
     width: 100%;
-    display: block;         /* Remove espaços extras abaixo do iframe */
+    display: block;
+    border-radius: 20px;
     filter: grayscale(100%) invert(92%) contrast(85%) hue-rotate(200deg);
-    transition: 0.8s ease;
+    transition: filter 0.8s ease;
 }
 
 .map-container:hover iframe {
     filter: grayscale(0%) invert(0%) contrast(100%) hue-rotate(0deg);
+}
+
+/* Responsividade */
+@media (max-width: 650px) {
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .quote-container { padding: 40px 20px; }
+    .carousel-container { max-width: 320px; }
+}
+
+@media (max-width: 600px) {
+    .love-title { font-size: 2.2rem; }
+    .divider-container { max-width: 300px; }
 }
